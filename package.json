@@ -4,7 +4,8 @@
   "description": "Garden Reservation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "debug": "cross-env DEBUG=nadia:* nodemon",
+    "start": "node bin/www"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/kenyaachon/Nadia/issues"
   },
-  "homepage": "https://github.com/kenyaachon/Nadia#readme"
+  "homepage": "https://github.com/kenyaachon/Nadia#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "express": "^4.18.1"
+  }
 }
