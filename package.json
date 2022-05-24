@@ -1,0 +1,19 @@
+{
+  "name": "nadia",
+  "version": "1.0.0",
+  "description": "Garden Reservation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenyaachon/Nadia.git"
+  },
+  "author": "Moses Mbugua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kenyaachon/Nadia/issues"
+  },
+  "homepage": "https://github.com/kenyaachon/Nadia#readme"
+}
