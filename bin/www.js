@@ -5,7 +5,7 @@
  * Module dependencies
  */
 
-const app = require("../app");
+const app = require("../app")();
 const debug = require("debug")("nadia:server");
 const http = require("http");
 
