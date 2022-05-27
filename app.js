@@ -6,6 +6,7 @@ let index = require("./routes/index");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 
+let reservations = require("./routes/reservations");
 const configuration = {};
 
 if (1) {
@@ -27,6 +28,8 @@ module.exports = () => {
   app.use(cookieParser());
   //default route
   app.use("/", index);
+
+  app.use("/reservations", reservations);
 
   //catch 404 and forward to error handler
   app.use(function (req, res, next) {
