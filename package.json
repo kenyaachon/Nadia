@@ -2,10 +2,10 @@
   "name": "nadia",
   "version": "1.0.0",
   "description": "Garden Reservation",
-  "main": "index.js",
+  "main": "bin/www",
   "scripts": {
     "debug": "cross-env DEBUG=nadia:* nodemon",
-    "start": "nodemon bin/www"
+    "start": "node bin/www"
   },
   "repository": {
     "type": "git",
