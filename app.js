@@ -7,13 +7,13 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 
 const reservations = require("./routes/reservations");
-const { up, down } = require("./migrations/initial");
-const knex = require("./lib/knex");
-const configuration = {};
+// const { up, down } = require("./migrations/initial");
+// const knex = require("./lib/knex");
+// const configuration = {};
 
-if (1) {
-  up(knex);
-}
+// if (1) {
+//   up(knex);
+// }
 module.exports = () => {
   const app = express();
   // Static assets
@@ -41,6 +41,7 @@ module.exports = () => {
     next(error);
   });
   //error handler
+  // eslint-disable-next-line no-unused-vars
   app.use(function (err, req, res, next) {
     //set locals, only providing error in test
     res.locals.message = err.message;
