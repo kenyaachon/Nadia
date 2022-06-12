@@ -7,13 +7,7 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 
 const reservations = require("./routes/reservations");
-// const { up, down } = require("./migrations/initial");
-// const knex = require("./lib/knex");
-// const configuration = {};
 
-// if (1) {
-//   up(knex);
-// }
 module.exports = () => {
   const app = express();
   // Static assets

@@ -30,3 +30,5 @@ text editor configuration.
     - Screws up file history
     - Inadvertenly cause bugs
   - Leave code better than you found it
+- Using the .eslintignore
+  - Even if you list a directory to ignore, if you have eslint builtin to you VSCODE, then it will still give you errors for that folder when you open up specific files
