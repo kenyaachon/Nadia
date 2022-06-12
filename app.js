@@ -2,12 +2,12 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 
-let index = require("./routes/index");
+const index = require("./routes/index");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 
-let reservations = require("./routes/reservations");
-let { up, down } = require("./migrations/initial");
+const reservations = require("./routes/reservations");
+const { up, down } = require("./migrations/initial");
 const knex = require("./lib/knex");
 const configuration = {};
 
@@ -15,7 +15,7 @@ if (1) {
   up(knex);
 }
 module.exports = () => {
-  var app = express();
+  const app = express();
   // Static assets
   app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
   app.use(express.static(path.join(__dirname, "public")));
@@ -36,7 +36,7 @@ module.exports = () => {
 
   //catch 404 and forward to error handler
   app.use(function (req, res, next) {
-    let error = new Error("Not Found");
+    const error = new Error("Not Found");
     error.status = 404;
     next(error);
   });
