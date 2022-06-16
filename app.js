@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 
 const reservations = require("./routes/reservations");
 const auth = require("./lib/middleware/auth");
+const admin = require("./routes/admin");
 
 module.exports = () => {
   const app = express();
@@ -29,7 +30,7 @@ module.exports = () => {
 
   //Initial Security
   app.use("/admin", auth("admin", "admin"));
-  // app.use("/admin", admin);
+  app.use("/admin", admin);
 
   app.use("/reservations", reservations);
 
