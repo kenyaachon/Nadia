@@ -7,6 +7,7 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 
 const reservations = require("./routes/reservations");
+const auth = require("./lib/middleware/auth");
 
 module.exports = () => {
   const app = express();
@@ -25,6 +26,10 @@ module.exports = () => {
   app.use(cookieParser());
   //default route
   app.use("/", index);
+
+  //Initial Security
+  app.use("/admin", auth("admin", "admin"));
+  // app.use("/admin", admin);
 
   app.use("/reservations", reservations);
 
