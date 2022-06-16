@@ -18,6 +18,16 @@ The database is SQLITE3 that is run in a docker container, and the volume for th
 This project uses [EditorConfig](https://editorconfig.org) to standardize
 text editor configuration.
 
+## Testing
+
+This projects uses the [Jest Framework](https://jestjs.io).
+
+To run the tests use the following commands:
+
+```
+npm test
+```
+
 ## Lessons Learned
 
 - For private shareable configs
