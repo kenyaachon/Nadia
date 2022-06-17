@@ -39,6 +39,49 @@ To run the tests use the following commands:
 npm test
 ```
 
+- The right way vs wrong way to test callbacks
+
+  ```
+    function toTest(callback) {
+      setImmediate(() => callback('yay'));
+    }
+    test('the wrong way to test call backs', () => {
+      function callback(value) {
+        expect(value).toBe('nooo')
+      }
+
+      toTest(callback)
+    })
+  ```
+
+  - why this is the wrong way
+
+    - if the above test was to be used then it would pass, but it should fail, but this method does not handle errors, also the test completes when the function toTest has completed execution and not when the test for comparing values is completed
+
+  - The correct way to testing asynchronous
+
+    ```
+    function toTest(callback) {
+      setImmediate(() => callback('yay));
+    }
+
+    test('the right way to test callbacks', done => {
+      function callback(value) {
+        try{
+          expect(value).toBe('nooo');
+
+          done();
+        } catch(error) {
+          done(error);
+        }
+      }
+
+      toTest(callback)
+    })
+    ```
+
+    - the difference in the above version and previous version is that by using the done function, you can get the results of the asynchronous function but if there is an error the trycatch block will allow you to use the done function to get the specific error caused by the callback thereby enabling better debugging output. Which is very critical for a large codebase
+
 ## Lessons Learned
 
 - For private shareable configs
