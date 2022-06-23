@@ -82,6 +82,10 @@ npm test
 
     - the difference in the above version and previous version is that by using the done function, you can get the results of the asynchronous function but if there is an error the trycatch block will allow you to use the done function to get the specific error caused by the callback thereby enabling better debugging output. Which is very critical for a large codebase
 
+    - Mocking functions and modules
+      - to allow for unit test that are atomic as possible you can use mocking in jest to allow for testing of functions that rely on others
+      - to mock properly you need to make a back up of the original function or module and then once you have created the mock function, then you restore the original function from the backup you made
+
 ## Lessons Learned
 
 - For private shareable configs
