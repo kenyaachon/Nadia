@@ -11,18 +11,13 @@ npm install
 npm start
 ```
 
-The database is SQLITE3 that is run in a docker container, and the volume for the docker container is stored in dev.sqlite3.db
-
-To get the docker container started, run the following command
-
-```
-docker pull keinos/sqlite3:latest
-
-docker run --rm -it -v "$(pwd):/workspace" keinos/sqlite3 sqlite3 /workspace/dev.sqlite3.db
+The database is running in sqlite3 to build sqlite3 in the rootsite
+to get the database setup run
 
 ```
-
-\*Note you need to mount the working directory, as a volume to the container
+npm config set -g production false
+npx knex migrate:latest
+```
 
 ## Development
 

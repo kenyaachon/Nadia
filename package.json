@@ -22,7 +22,8 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.17.0",
     "jest": "^28.1.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
   },
   "dependencies": {
     "basic-auth": "^2.0.1",
