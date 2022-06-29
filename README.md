@@ -80,6 +80,18 @@ npm test
     - Mocking functions and modules
       - to allow for unit test that are atomic as possible you can use mocking in jest to allow for testing of functions that rely on others
       - to mock properly you need to make a back up of the original function or module and then once you have created the mock function, then you restore the original function from the backup you made
+    - For more verbose feedback about test suites run
+
+      - ```
+        npm test -- --verbose
+        ```
+
+    - An important part of the testing is to include code coverage, conveninetly JEST provides a built-in test coverage tool called
+      [istanbul](https://istanbul.js.org/)
+
+      ```
+      jest --coverage
+      ```
 
 ## Lessons Learned
 
