@@ -9,11 +9,13 @@ beforeAll(() => {
   jest.mock("../lib/knex", () => () => ({
     insert: mockInsert,
   }));
+  jest.mock("./", () => require("./reservations"));
   app = request(require("../app")());
 });
 
 afterAll(() => {
   jest.unmock("morgan");
+  jest.unmock("./");
 });
 
 //GET route

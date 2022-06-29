@@ -106,4 +106,7 @@ npm test
     - Inadvertenly cause bugs
   - Leave code better than you found it
 - Using the .eslintignore
+
   - Even if you list a directory to ignore, if you have eslint builtin to you VSCODE, then it will still give you errors for that folder when you open up specific files
+
+- Since functional tests are slow, to improve the performance of the tests, it helps to improve their isolation. Meaning, mocking all of the modules and files that are not necessary and mocking as many dependencies as possible

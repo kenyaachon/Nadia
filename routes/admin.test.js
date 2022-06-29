@@ -9,11 +9,13 @@ beforeAll(() => {
 
   //mock fetching data from the database
   jest.mock("../lib/knex", () => ({ select: () => ({ table: mockFetch }) }));
+  jest.mock("./", () => require("./admin"));
   app = request(require("../app")());
 });
 
 afterAll(() => {
   jest.unmock("morgan");
+  jest.unmock("./");
 });
 
 //admin page
